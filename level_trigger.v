@@ -1,4 +1,5 @@
-module level_triggered_data_shift (
+module level_trigger 
+    (
     input wire clk,        // Fast system clock
     output reg sclk,       // Serial clock (slower derived from clk)
     output reg sda         // Data line
@@ -29,7 +30,7 @@ module level_triggered_data_shift (
             else begin
                 bit_cnt <= bit_cnt + 1;
                 if (bit_cnt == 7)
-                    bit_cnt <= 0; // wrap around for demo
+                    bit_cnt <= 0; 
             end
         end
     end
